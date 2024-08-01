@@ -1,0 +1,28 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" [opened]="true" class="sidenav">
+        <div class="logo-container">
+            <img src="assets/Brands.png" alt="Library Management" class=" m-b-10 logo">
+          </div>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">Seats</a>
+        <a mat-list-item routerLink="/">Add Student</a>
+        <a mat-list-item routerLink="/">Student Info</a>
+        <!-- Add more links as needed -->
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="sticky-navbar">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Library Management</span>
+        <!-- Add other toolbar content here -->
+      </mat-toolbar>
+  
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
