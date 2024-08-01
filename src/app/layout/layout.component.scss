@@ -1,0 +1,27 @@
+  
+.sidenav {
+    width: 250px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .logo-container {
+    margin: 16px 0 0 10px; /* Adjust margin as needed */
+  }
+  
+  .logo {
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  

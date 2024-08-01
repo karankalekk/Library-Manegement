@@ -7,18 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { HomeComponent } from './component/home/home.component';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
-import { NavbarComponent} from './component/navbar/navbar.component';
+
+import { LayoutComponent } from './layout/layout.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    HomeComponent,
-    SidebarComponent,
-    NavbarComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

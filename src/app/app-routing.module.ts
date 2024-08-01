@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { HomeComponent } from './component/home/home.component';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
-import { NavbarComponent } from './component/navbar/navbar.component';
+import { LayoutComponent } from './layout/layout.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'dashboard',pathMatch:'full'},
-  {path:'dashboard',component:DashboardComponent},
-  {path:'home',component:HomeComponent},
-  {path:'sidebar',component:SidebarComponent},
-  {path:'navbar',component:NavbarComponent},
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: '', component: DashboardComponent },
+      { path: 'navbar', component: NavbarComponent },
+      { path: 'sidebar', component: SidebarComponent }
+    ]
+  },
+  
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: '', component: DashboardComponent },
+      // { path: 'navbar', component: NavbarComponent },
+      // { path: 'sidebar', component: SidebarComponent }
+    ]
+  },
+
+  { path: 'pages', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule) },
 ];
 
 @NgModule({
